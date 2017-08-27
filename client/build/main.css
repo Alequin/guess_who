@@ -1,0 +1,31 @@
+#app{
+}
+
+.main-container{
+  width: 75%;
+  margin: auto;
+}
+
+.game-details-container{
+  display: flex;
+  border-bottom: 1px solid black;
+}
+
+.game-details-container img{
+  max-width: 800px;
+  max-height: 512px;
+}
+
+.guess-list{
+  padding: 10px;
+  min-width: 100px;
+  border-left: 1px solid black;
+}
+
+.guess-list table{
+  text-align: center;
+}
+
+.guess-field{
+  padding: 15px;
+}
