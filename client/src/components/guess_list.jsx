@@ -3,9 +3,16 @@ import React from 'react';
 class GuessList extends React.Component{
 
   render(){
+
+    console.log(this.props.maxGuesses);
+
+    const guessesMade = this.props.guesses.length;
+    const maxGuesses = this.props.maxGuesses;
+    const guessesLeft =  maxGuesses - guessesMade;
+
     return(
       <aside className="guess-list">
-        <h2>Guesses 15/15</h2>
+        <h2>Guesses {guessesLeft}/{maxGuesses}</h2>
         <table>
           <thead>
             <tr>

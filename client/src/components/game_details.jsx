@@ -8,7 +8,7 @@ class GameDetails extends React.Component{
     return(
       <section className="game-details-container">
         <img src="./images/guess_who_chars.png" alt="Guess Who Characters"/>
-        <GuessList/>
+        <GuessList maxGuesses={this.props.maxGuesses} guesses={this.props.guesses}/>
       </section>
     );
   }

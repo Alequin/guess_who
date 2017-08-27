@@ -9772,11 +9772,13 @@ class GuessWho extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
     super(props);
     this.state = {
       selectedCharacter: __WEBPACK_IMPORTED_MODULE_4__models_characters__["a" /* default */][__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5__models_Dice__["a" /* default */])(0, __WEBPACK_IMPORTED_MODULE_4__models_characters__["a" /* default */].length - 1)],
-      guessesMade: 0
+      guesses: [],
+      maxGuesses: 15
     };
   }
 
   render() {
+
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       "div",
       null,
@@ -9784,7 +9786,7 @@ class GuessWho extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         "div",
         { className: "container" },
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__components_game_details__["a" /* default */], null),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__components_game_details__["a" /* default */], { maxGuesses: this.state.maxGuesses, guesses: this.state.guesses }),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__components_guess_forms__["a" /* default */], null)
       )
     );
@@ -22495,7 +22497,7 @@ class GameDetails extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Componen
       "section",
       { className: "game-details-container" },
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", { src: "./images/guess_who_chars.png", alt: "Guess Who Characters" }),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__guess_list__["a" /* default */], null)
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__guess_list__["a" /* default */], { maxGuesses: this.props.maxGuesses, guesses: this.props.guesses })
     );
   }
 
@@ -22515,13 +22517,23 @@ class GameDetails extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Componen
 class GuessList extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
 
   render() {
+
+    console.log(this.props.maxGuesses);
+
+    const guessesMade = this.props.guesses.length;
+    const maxGuesses = this.props.maxGuesses;
+    const guessesLeft = maxGuesses - guessesMade;
+
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       "aside",
       { className: "guess-list" },
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         "h2",
         null,
-        "Guesses 15/15"
+        "Guesses ",
+        guessesLeft,
+        "/",
+        maxGuesses
       ),
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         "table",

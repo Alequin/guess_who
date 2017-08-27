@@ -12,16 +12,18 @@ class GuessWho extends React.Component{
     super(props)
     this.state = {
       selectedCharacter: characters[dice(0, characters.length-1)],
-      guessesMade: 0
+      guesses: [],
+      maxGuesses: 15
     }
   }
 
   render(){
+
     return(
       <div>
         <TitleNav/>
         <div className="container">
-          <GameDetails/>
+          <GameDetails maxGuesses={this.state.maxGuesses} guesses={this.state.guesses}/>
           <GuessForms/>
         </div>
       </div>
