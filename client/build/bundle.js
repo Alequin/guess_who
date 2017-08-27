@@ -22634,17 +22634,20 @@ class GuessForms extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component
 
 
 
+const DEFAULT = "default";
+
 class GuessAttribute extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      selectedAttribute: "default",
+      selectedAttribute: DEFAULT,
       subAttributes: [],
-      selectedSubAttribute: "default"
+      selectedSubAttribute: DEFAULT
     };
     this.handleOnAttributeChange = this.handleOnAttributeChange.bind(this);
     this.handleOnSubAttributeChange = this.handleOnSubAttributeChange.bind(this);
+    this.handleOnClickGo = this.handleOnClickGo.bind(this);
   }
 
   handleOnAttributeChange(event) {
@@ -22660,7 +22663,7 @@ class GuessAttribute extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Compo
     this.setState({
       selectedAttribute: selected,
       subAttributes: subAttributes,
-      selectedSubAttribute: "default"
+      selectedSubAttribute: DEFAULT
     });
   }
 
@@ -22668,6 +22671,14 @@ class GuessAttribute extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Compo
     this.setState({
       selectedSubAttribute: event.target.value
     });
+  }
+
+  handleOnClickGo(event) {
+    event.preventDefault();
+    if (this.state.selectedSubAttribute === DEFAULT) {
+      alert("Please select an attribute and a sub attribute");
+      return;
+    }
   }
 
   render() {
@@ -22714,7 +22725,7 @@ class GuessAttribute extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Compo
             onChange: this.handleOnAttributeChange },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             "option",
-            { value: "default" },
+            { value: DEFAULT },
             "Pick an attribute"
           ),
           attributesAsOptions
@@ -22727,12 +22738,12 @@ class GuessAttribute extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Compo
             onChange: this.handleOnSubAttributeChange },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             "option",
-            { disabled: true, value: "default" },
+            { disabled: true, value: DEFAULT },
             subAttributesDefaultOption
           ),
           subAttributesAsOptions
         ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { className: "guess-element", type: "submit", value: "GO" })
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { onClick: this.handleOnClickGo, className: "guess-element", type: "submit", value: "GO" })
       )
     );
   }

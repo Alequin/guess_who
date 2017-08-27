@@ -1,17 +1,20 @@
 import React from 'react';
 import attributes from "./../models/attributes";
 
+const DEFAULT = "default"
+
 class GuessAttribute extends React.Component{
 
   constructor(props){
     super(props);
     this.state = {
-      selectedAttribute: "default",
+      selectedAttribute: DEFAULT,
       subAttributes: [],
-      selectedSubAttribute: "default"
+      selectedSubAttribute: DEFAULT
     }
     this.handleOnAttributeChange = this.handleOnAttributeChange.bind(this);
     this.handleOnSubAttributeChange = this.handleOnSubAttributeChange.bind(this);
+    this.handleOnClickGo = this.handleOnClickGo.bind(this);
   }
 
   handleOnAttributeChange(event){
@@ -27,7 +30,7 @@ class GuessAttribute extends React.Component{
     this.setState({
       selectedAttribute: selected,
       subAttributes: subAttributes,
-      selectedSubAttribute: "default"
+      selectedSubAttribute: DEFAULT
     });
   }
 
@@ -35,6 +38,14 @@ class GuessAttribute extends React.Component{
     this.setState({
       selectedSubAttribute: event.target.value
     });
+  }
+
+  handleOnClickGo(event){
+    event.preventDefault();
+    if(this.state.selectedSubAttribute ===  DEFAULT){
+      alert("Please select an attribute and a sub attribute");
+      return;
+    }
   }
 
   render(){
@@ -62,17 +73,17 @@ class GuessAttribute extends React.Component{
             className="guess-element"
             value={this.state.selectedAttribute}
             onChange={this.handleOnAttributeChange}>
-            <option value={"default"}>Pick an attribute</option>
+            <option value={DEFAULT}>Pick an attribute</option>
             {attributesAsOptions}
           </select>
           <select
             className="guess-element"
             value={this.state.selectedSubAttribute}
             onChange={this.handleOnSubAttributeChange}>
-            <option disabled value={"default"}>{subAttributesDefaultOption}</option>
+            <option disabled value={DEFAULT}>{subAttributesDefaultOption}</option>
             {subAttributesAsOptions}
           </select>
-          <input className="guess-element" type="submit" value="GO"/>
+          <input onClick={this.handleOnClickGo} className="guess-element" type="submit" value="GO"/>
         </form>
       </fieldset>
     );
