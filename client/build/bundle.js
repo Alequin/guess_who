@@ -9803,12 +9803,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(83);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__containers_guess_who__ = __webpack_require__(82);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_characters__ = __webpack_require__(192);
+
 
 
 
 
 
 window.onload = function () {
+  console.log("out: ", __WEBPACK_IMPORTED_MODULE_3__models_characters__["a" /* default */]);
   __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__containers_guess_who__["a" /* default */], null), document.getElementById('app'));
 };
 
@@ -22707,6 +22710,30 @@ class GuessPerson extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Componen
 }
 
 /* harmony default export */ __webpack_exports__["a"] = (GuessPerson);
+
+/***/ }),
+/* 191 */,
+/* 192 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+
+const characters = [];
+
+const alex = {
+  name: "Alex",
+  gender: "Male",
+  hair: { has: true, colour: "black" },
+  nose: { size: "small" },
+  mustache: { has: true },
+  beard: { has: false },
+  glasses: { has: false },
+  hat: { has: false, colour: "none" }
+};
+
+characters.push();
+
+/* harmony default export */ __webpack_exports__["a"] = (characters);
 
 /***/ })
 /******/ ]);
