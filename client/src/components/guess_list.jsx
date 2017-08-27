@@ -6,7 +6,7 @@ class GuessList extends React.Component{
     return(
       <aside className="guess-list">
         <h2>Guesses 15/15</h2>
-        <table border="1">
+        <table>
           <tr>
             <th>Attribute</th>
             <th>Guess</th>
