@@ -7,8 +7,8 @@ class GuessAttribute extends React.Component{
       <fieldset className="guess-field">
         <legend>Guess Attribute</legend>
         <form>
-          <select className="guess-element">
-            <option disabled selected="selected">Pick an attribute</option>
+          <select className="guess-element" selected={"default"}>
+            <option value="default">Pick an attribute</option>
             <option>Option 1</option>
             <option>Option 2</option>
           </select>

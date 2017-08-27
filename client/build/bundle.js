@@ -22515,41 +22515,49 @@ class GuessList extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component 
         "table",
         null,
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          "tr",
+          "thead",
           null,
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            "th",
+            "tr",
             null,
-            "Attribute"
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            "th",
-            null,
-            "Guess"
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            "th",
-            null,
-            "Result"
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              "th",
+              null,
+              "Attribute"
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              "th",
+              null,
+              "Guess"
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              "th",
+              null,
+              "Result"
+            )
           )
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          "tr",
+          "tbody",
           null,
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            "td",
+            "tr",
             null,
-            "Hair"
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            "td",
-            null,
-            "Red"
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            "td",
-            null,
-            "Nope"
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              "td",
+              null,
+              "Hair"
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              "td",
+              null,
+              "Red"
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              "td",
+              null,
+              "Nope"
+            )
           )
         )
       )
@@ -22614,10 +22622,10 @@ class GuessAttribute extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Compo
         null,
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           "select",
-          { className: "guess-element" },
+          { className: "guess-element", selected: "default" },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             "option",
-            { disabled: true, selected: "selected" },
+            { value: "default" },
             "Pick an attribute"
           ),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(

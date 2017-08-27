@@ -7,16 +7,20 @@ class GuessList extends React.Component{
       <aside className="guess-list">
         <h2>Guesses 15/15</h2>
         <table>
-          <tr>
-            <th>Attribute</th>
-            <th>Guess</th>
-            <th>Result</th>
-          </tr>
-          <tr>
-            <td>Hair</td>
-            <td>Red</td>
-            <td>Nope</td>
-          </tr>
+          <thead>
+            <tr>
+              <th>Attribute</th>
+              <th>Guess</th>
+              <th>Result</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Hair</td>
+              <td>Red</td>
+              <td>Nope</td>
+            </tr>
+          </tbody>
         </table>
       </aside>
     );
