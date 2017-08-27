@@ -22614,7 +22614,7 @@ class GuessAttribute extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Compo
         null,
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           "select",
-          null,
+          { className: "guess-element" },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             "option",
             { disabled: true, selected: "selected" },
@@ -22633,7 +22633,7 @@ class GuessAttribute extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Compo
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           "select",
-          null,
+          { className: "guess-element" },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             "option",
             null,
@@ -22645,7 +22645,7 @@ class GuessAttribute extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Compo
             "Option 2"
           )
         ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { type: "submit", value: "GO" })
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { className: "guess-element", type: "submit", value: "GO" })
       )
     );
   }
@@ -22679,7 +22679,7 @@ class GuessPerson extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Componen
         null,
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           "select",
-          null,
+          { className: "guess-element" },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             "option",
             null,
@@ -22691,7 +22691,7 @@ class GuessPerson extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Componen
             "Option 2"
           )
         ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { type: "submit", value: "GO" })
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { className: "guess-element", type: "submit", value: "GO" })
       )
     );
   }

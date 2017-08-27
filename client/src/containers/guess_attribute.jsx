@@ -7,18 +7,18 @@ class GuessAttribute extends React.Component{
       <fieldset className="guess-field">
         <legend>Guess Attribute</legend>
         <form>
-          <select>
+          <select className="guess-element">
             <option disabled selected="selected">Pick an attribute</option>
             <option>Option 1</option>
             <option>Option 2</option>
           </select>
-          <select>
+          <select className="guess-element">
             <option>Option 1</option>
             <option>Option 2</option>
           </select>
-          <input type="submit" value="GO"/>
+          <input className="guess-element" type="submit" value="GO"/>
         </form>
-      </fieldset> 
+      </fieldset>
     );
   }
 

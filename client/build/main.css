@@ -53,3 +53,7 @@ body{
 .guess-field{
   padding: 15px;
 }
+
+.guess-field .guess-element{
+  margin-left: 10px;
+}
