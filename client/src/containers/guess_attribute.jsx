@@ -22,11 +22,6 @@ class GuessAttribute extends React.Component{
     const selected = event.target.value;
     const subAttributes = Object.keys(attributes[selected]);
 
-    if(subAttributes.length <= 0){
-      subAttributes.push("Has");
-      subAttributes.push("Does Not Have");
-    }
-
     this.setState({
       selectedAttribute: selected,
       subAttributes: subAttributes,
@@ -35,6 +30,7 @@ class GuessAttribute extends React.Component{
   }
 
   handleOnSubAttributeChange(event){
+
     this.setState({
       selectedSubAttribute: event.target.value
     });

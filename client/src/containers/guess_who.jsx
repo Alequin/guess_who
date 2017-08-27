@@ -21,11 +21,20 @@ class GuessWho extends React.Component{
 
   handleMakeAttributeGuess(guess){
     const characterAttribute = this.state.selectedCharacter[guess.attribute];
+
+    console.log(characterAttribute);
+    console.log(guess.subAttributeObject);
+
+    let guessResult = "Nope";
     if(guess.subAttributeObject === characterAttribute){
-      console.log("yes");
-    }else{
-      console.log("no");
+      guessResult = "Yes";
     }
+
+    guess.result = guessResult;
+    console.log(guessResult);
+
+    // const newGuesses = this.state.guesses;
+    // newGuesses.push(guess);
   }
 
   render(){

@@ -9781,11 +9781,20 @@ class GuessWho extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
 
   handleMakeAttributeGuess(guess) {
     const characterAttribute = this.state.selectedCharacter[guess.attribute];
+
+    console.log(characterAttribute);
+    console.log(guess.subAttributeObject);
+
+    let guessResult = "Nope";
     if (guess.subAttributeObject === characterAttribute) {
-      console.log("yes");
-    } else {
-      console.log("no");
+      guessResult = "Yes";
     }
+
+    guess.result = guessResult;
+    console.log(guessResult);
+
+    // const newGuesses = this.state.guesses;
+    // newGuesses.push(guess);
   }
 
   render() {
@@ -22666,11 +22675,6 @@ class GuessAttribute extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Compo
     const selected = event.target.value;
     const subAttributes = Object.keys(__WEBPACK_IMPORTED_MODULE_1__models_attributes__["a" /* default */][selected]);
 
-    if (subAttributes.length <= 0) {
-      subAttributes.push("Has");
-      subAttributes.push("Does Not Have");
-    }
-
     this.setState({
       selectedAttribute: selected,
       subAttributes: subAttributes,
@@ -22679,6 +22683,7 @@ class GuessAttribute extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Compo
   }
 
   handleOnSubAttributeChange(event) {
+
     this.setState({
       selectedSubAttribute: event.target.value
     });
@@ -22838,7 +22843,8 @@ const alex = {
   hair: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].hair.black,
   nose: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].nose.small,
   mustache: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].mustache.black,
-  beard: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].beard.black
+  beard: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].beard.black,
+  glasses: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].glasses.none
 };
 characters.push(alex);
 
@@ -22847,7 +22853,8 @@ const alfred = {
   gender: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].gender.male,
   hair: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].hair.ginger,
   nose: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].nose.small,
-  mustache: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].mustache.ginger
+  mustache: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].mustache.ginger,
+  glasses: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].glasses.none
 };
 characters.push(alfred);
 
@@ -22855,7 +22862,8 @@ const anita = {
   name: "anita",
   gender: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].gender.female,
   hair: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].hair.blonde,
-  nose: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].nose.small
+  nose: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].nose.small,
+  glasses: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].glasses.none
 };
 characters.push(anita);
 
@@ -22863,7 +22871,8 @@ const anne = {
   name: "anne",
   gender: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].gender.female,
   hair: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].hair.black,
-  nose: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].nose.large
+  nose: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].nose.large,
+  glasses: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].glasses.none
 };
 characters.push(anne);
 
@@ -22872,7 +22881,8 @@ const bernard = {
   gender: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].gender.male,
   hair: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].hair.brown,
   nose: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].nose.large,
-  hat: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].hat.grey
+  hat: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].hat.grey,
+  glasses: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].glasses.none
 };
 characters.push(bernard);
 
@@ -22880,7 +22890,8 @@ const bill = {
   name: "bill",
   gender: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].gender.male,
   nose: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].nose.small,
-  beard: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].beard.ginger
+  beard: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].beard.ginger,
+  glasses: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].glasses.none
 };
 characters.push(bill);
 
@@ -22889,7 +22900,8 @@ const charles = {
   gender: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].gender.male,
   hair: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].hair.blonde,
   nose: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].nose.small,
-  mustache: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].mustache.blonde
+  mustache: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].mustache.blonde,
+  glasses: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].glasses.none
 };
 characters.push(charles);
 
@@ -22898,7 +22910,7 @@ const claire = {
   gender: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].gender.female,
   hair: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].hair.ginger,
   nose: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].nose.small,
-  glasses: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].glasses,
+  glasses: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].glasses.has,
   hat: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].hat.yellow
 };
 characters.push(claire);
@@ -22957,7 +22969,10 @@ const attributes = {
     yellow: { has: true, colour: "yellow" }
   },
 
-  glasses: true
+  glasses: {
+    has: true,
+    none: false
+  }
 };
 
 /* harmony default export */ __webpack_exports__["a"] = (attributes);

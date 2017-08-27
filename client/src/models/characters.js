@@ -9,7 +9,8 @@ const alex = {
   hair: attributes.hair.black,
   nose: attributes.nose.small,
   mustache: attributes.mustache.black,
-  beard: attributes.beard.black
+  beard: attributes.beard.black,
+  glasses: attributes.glasses.none,
 };
 characters.push(alex);
 
@@ -19,6 +20,7 @@ const alfred = {
   hair: attributes.hair.ginger,
   nose: attributes.nose.small,
   mustache: attributes.mustache.ginger,
+  glasses: attributes.glasses.none,
 };
 characters.push(alfred);
 
@@ -27,6 +29,7 @@ const anita = {
   gender: attributes.gender.female,
   hair: attributes.hair.blonde,
   nose: attributes.nose.small,
+  glasses: attributes.glasses.none,
 };
 characters.push(anita);
 
@@ -35,6 +38,7 @@ const anne = {
   gender: attributes.gender.female,
   hair: attributes.hair.black,
   nose: attributes.nose.large,
+  glasses: attributes.glasses.none,
 };
 characters.push(anne);
 
@@ -43,7 +47,8 @@ const bernard = {
   gender: attributes.gender.male,
   hair: attributes.hair.brown,
   nose: attributes.nose.large,
-  hat: attributes.hat.grey
+  hat: attributes.hat.grey,
+  glasses: attributes.glasses.none,
 };
 characters.push(bernard);
 
@@ -51,7 +56,8 @@ const bill = {
   name: "bill",
   gender: attributes.gender.male,
   nose: attributes.nose.small,
-  beard: attributes.beard.ginger
+  beard: attributes.beard.ginger,
+  glasses: attributes.glasses.none,
 };
 characters.push(bill);
 
@@ -61,6 +67,7 @@ const charles = {
   hair: attributes.hair.blonde,
   nose: attributes.nose.small,
   mustache: attributes.mustache.blonde,
+  glasses: attributes.glasses.none,
 };
 characters.push(charles);
 
@@ -69,7 +76,7 @@ const claire = {
   gender: attributes.gender.female,
   hair: attributes.hair.ginger,
   nose: attributes.nose.small,
-  glasses: attributes.glasses,
+  glasses: attributes.glasses.has,
   hat: attributes.hat.yellow
 };
 characters.push(claire);

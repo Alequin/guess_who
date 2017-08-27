@@ -34,7 +34,10 @@ const attributes = {
     yellow: {has: true, colour: "yellow"},
   },
 
-  glasses: true,
+  glasses: {
+    has: true,
+    none: false
+  },
 }
 
 export default attributes;
