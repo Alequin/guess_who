@@ -9771,7 +9771,8 @@ class GuessWho extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedCharacter: __WEBPACK_IMPORTED_MODULE_4__models_characters__["a" /* default */][__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5__models_Dice__["a" /* default */])(0, __WEBPACK_IMPORTED_MODULE_4__models_characters__["a" /* default */].length - 1)]
+      selectedCharacter: __WEBPACK_IMPORTED_MODULE_4__models_characters__["a" /* default */][__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5__models_Dice__["a" /* default */])(0, __WEBPACK_IMPORTED_MODULE_4__models_characters__["a" /* default */].length - 1)],
+      guessesMade: 0
     };
   }
 

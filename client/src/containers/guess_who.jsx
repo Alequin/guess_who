@@ -11,7 +11,8 @@ class GuessWho extends React.Component{
   constructor(props){
     super(props)
     this.state = {
-      selectedCharacter: characters[dice(0, characters.length-1)]
+      selectedCharacter: characters[dice(0, characters.length-1)],
+      guessesMade: 0
     }
   }
 
