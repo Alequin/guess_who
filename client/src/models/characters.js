@@ -59,7 +59,7 @@ const charles = {
   name: "charles",
   gender: attributes.gender.male,
   hair: attributes.hair.blonde,
-  nose: attributes.node.small,
+  nose: attributes.nose.small,
   mustache: attributes.mustache.blonde,
 };
 characters.push(charles);
@@ -68,7 +68,7 @@ const claire = {
   name: "claire",
   gender: attributes.gender.female,
   hair: attributes.hair.ginger,
-  nose: attributes.node.small,
+  nose: attributes.nose.small,
   glasses: attributes.glasses,
   hat: attributes.hat.yellow
 };

@@ -22630,6 +22630,8 @@ class GuessForms extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_attributes__ = __webpack_require__(194);
+
 
 
 class GuessAttribute extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
@@ -22639,6 +22641,15 @@ class GuessAttribute extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Compo
   }
 
   render() {
+
+    const attributesAsOptions = Object.keys(__WEBPACK_IMPORTED_MODULE_1__models_attributes__["a" /* default */]).map((attribute, index) => {
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        "option",
+        { key: index, value: attribute },
+        attribute
+      );
+    });
+
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       "fieldset",
       { className: "guess-field" },
@@ -22658,16 +22669,7 @@ class GuessAttribute extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Compo
             { value: "default" },
             "Pick an attribute"
           ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            "option",
-            null,
-            "Option 1"
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            "option",
-            null,
-            "Option 2"
-          )
+          attributesAsOptions
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           "select",
@@ -22708,7 +22710,7 @@ class GuessPerson extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Componen
     const characters = this.props.characters.map((character, index) => {
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         "option",
-        { value: index },
+        { key: index, value: index },
         character.name
       );
     });
@@ -22811,7 +22813,7 @@ const charles = {
   name: "charles",
   gender: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].gender.male,
   hair: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].hair.blonde,
-  nose: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].node.small,
+  nose: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].nose.small,
   mustache: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].mustache.blonde
 };
 characters.push(charles);
@@ -22820,7 +22822,7 @@ const claire = {
   name: "claire",
   gender: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].gender.female,
   hair: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].hair.ginger,
-  nose: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].node.small,
+  nose: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].nose.small,
   glasses: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].glasses,
   hat: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].hat.yellow
 };

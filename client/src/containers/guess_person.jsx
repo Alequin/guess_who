@@ -5,7 +5,7 @@ class GuessPerson extends React.Component{
   render(){
 
     const characters = this.props.characters.map((character, index) => {
-      return <option value={index}>{character.name}</option>
+      return <option key={index} value={index}>{character.name}</option>
     })
 
     return(
