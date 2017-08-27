@@ -22607,11 +22607,30 @@ class GuessAttribute extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Compo
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         "legend",
         null,
-        "Guess Person"
+        "Guess Attribute"
       ),
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         "form",
         null,
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          "select",
+          null,
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            "option",
+            { disabled: true, selected: "selected" },
+            "Pick an attribute"
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            "option",
+            null,
+            "Option 1"
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            "option",
+            null,
+            "Option 2"
+          )
+        ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           "select",
           null,
@@ -22653,30 +22672,11 @@ class GuessPerson extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Componen
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         "legend",
         null,
-        "Guess Attribute"
+        "Guess Person"
       ),
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         "form",
         null,
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          "select",
-          null,
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            "option",
-            { disabled: true, selected: "selected" },
-            "Pick an attribute"
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            "option",
-            null,
-            "Option 1"
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            "option",
-            null,
-            "Option 2"
-          )
-        ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           "select",
           null,
