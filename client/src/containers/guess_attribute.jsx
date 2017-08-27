@@ -46,6 +46,14 @@ class GuessAttribute extends React.Component{
       alert("Please select an attribute and a sub attribute");
       return;
     }
+
+    const guess = {
+      attribute: this.state.selectedAttribute,
+      subAttribute: this.state.selectedSubAttribute,
+      subAttributeObject: attributes[this.state.selectedAttribute][this.state.selectedSubAttribute]
+    }
+
+    this.props.makeAttributeGuess(guess);
   }
 
   render(){
@@ -62,8 +70,6 @@ class GuessAttribute extends React.Component{
     if(subAttributesAsOptions.length <= 0){
       subAttributesDefaultOption = ""
     }
-
-    console.log(this.state.selectedSubAttribute);
 
     return (
       <fieldset className="guess-field">

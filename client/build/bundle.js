@@ -9775,6 +9775,17 @@ class GuessWho extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
       guesses: [],
       maxGuesses: 15
     };
+    console.log(this.state.selectedCharacter);
+    this.handleMakeAttributeGuess = this.handleMakeAttributeGuess.bind(this);
+  }
+
+  handleMakeAttributeGuess(guess) {
+    const characterAttribute = this.state.selectedCharacter[guess.attribute];
+    if (guess.subAttributeObject === characterAttribute) {
+      console.log("yes");
+    } else {
+      console.log("no");
+    }
   }
 
   render() {
@@ -9787,7 +9798,7 @@ class GuessWho extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
         "div",
         { className: "container" },
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__components_game_details__["a" /* default */], { maxGuesses: this.state.maxGuesses, guesses: this.state.guesses }),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__components_guess_forms__["a" /* default */], { characters: __WEBPACK_IMPORTED_MODULE_4__models_characters__["a" /* default */] })
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__components_guess_forms__["a" /* default */], { characters: __WEBPACK_IMPORTED_MODULE_4__models_characters__["a" /* default */], makeAttributeGuess: this.handleMakeAttributeGuess })
       )
     );
   }
@@ -22615,7 +22626,7 @@ class GuessForms extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component
       "section",
       null,
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__containers_guess_person__["a" /* default */], { characters: this.props.characters }),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__containers_guess_attribute__["a" /* default */], null)
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__containers_guess_attribute__["a" /* default */], { makeAttributeGuess: this.props.makeAttributeGuess })
     );
   }
 
@@ -22679,6 +22690,14 @@ class GuessAttribute extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Compo
       alert("Please select an attribute and a sub attribute");
       return;
     }
+
+    const guess = {
+      attribute: this.state.selectedAttribute,
+      subAttribute: this.state.selectedSubAttribute,
+      subAttributeObject: __WEBPACK_IMPORTED_MODULE_1__models_attributes__["a" /* default */][this.state.selectedAttribute][this.state.selectedSubAttribute]
+    };
+
+    this.props.makeAttributeGuess(guess);
   }
 
   render() {
@@ -22703,8 +22722,6 @@ class GuessAttribute extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Compo
     if (subAttributesAsOptions.length <= 0) {
       subAttributesDefaultOption = "";
     }
-
-    console.log(this.state.selectedSubAttribute);
 
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       "fieldset",

@@ -15,6 +15,17 @@ class GuessWho extends React.Component{
       guesses: [],
       maxGuesses: 15
     }
+    console.log(this.state.selectedCharacter);
+    this.handleMakeAttributeGuess = this.handleMakeAttributeGuess.bind(this);
+  }
+
+  handleMakeAttributeGuess(guess){
+    const characterAttribute = this.state.selectedCharacter[guess.attribute];
+    if(guess.subAttributeObject === characterAttribute){
+      console.log("yes");
+    }else{
+      console.log("no");
+    }
   }
 
   render(){
@@ -24,7 +35,7 @@ class GuessWho extends React.Component{
         <TitleNav/>
         <div className="container">
           <GameDetails maxGuesses={this.state.maxGuesses} guesses={this.state.guesses}/>
-          <GuessForms characters={characters}/>
+          <GuessForms characters={characters} makeAttributeGuess={this.handleMakeAttributeGuess}/>
         </div>
       </div>
     );

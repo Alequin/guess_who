@@ -9,7 +9,7 @@ class GuessForms extends React.Component{
     return(
       <section>
         <GuessPerson characters={this.props.characters}/>
-        <GuessAttribute/>
+        <GuessAttribute makeAttributeGuess={this.props.makeAttributeGuess}/>
       </section>
     );
   }
