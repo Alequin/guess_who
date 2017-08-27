@@ -12,7 +12,7 @@ class GuessWho extends React.Component{
     super(props)
     this.state = {
       selectedCharacter: characters[dice(0, characters.length-1)],
-      guesses: [{attribute: "hair", guess: "black", result: "Yes"}],
+      guesses: [],
       maxGuesses: 15
     }
   }
@@ -24,7 +24,7 @@ class GuessWho extends React.Component{
         <TitleNav/>
         <div className="container">
           <GameDetails maxGuesses={this.state.maxGuesses} guesses={this.state.guesses}/>
-          <GuessForms/>
+          <GuessForms characters={characters}/>
         </div>
       </div>
     );

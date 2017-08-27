@@ -9772,7 +9772,7 @@ class GuessWho extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
     super(props);
     this.state = {
       selectedCharacter: __WEBPACK_IMPORTED_MODULE_4__models_characters__["a" /* default */][__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5__models_Dice__["a" /* default */])(0, __WEBPACK_IMPORTED_MODULE_4__models_characters__["a" /* default */].length - 1)],
-      guesses: [{ attribute: "hair", guess: "black", result: "Yes" }],
+      guesses: [],
       maxGuesses: 15
     };
   }
@@ -9787,7 +9787,7 @@ class GuessWho extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
         "div",
         { className: "container" },
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__components_game_details__["a" /* default */], { maxGuesses: this.state.maxGuesses, guesses: this.state.guesses }),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__components_guess_forms__["a" /* default */], null)
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__components_guess_forms__["a" /* default */], { characters: __WEBPACK_IMPORTED_MODULE_4__models_characters__["a" /* default */] })
       )
     );
   }
@@ -22614,7 +22614,7 @@ class GuessForms extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       "section",
       null,
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__containers_guess_person__["a" /* default */], null),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__containers_guess_person__["a" /* default */], { characters: this.props.characters }),
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__containers_guess_attribute__["a" /* default */], null)
     );
   }
@@ -22700,6 +22700,15 @@ class GuessAttribute extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Compo
 class GuessPerson extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
 
   render() {
+
+    const characters = this.props.characters.map((character, index) => {
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        "option",
+        { value: index },
+        character.name
+      );
+    });
+
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       "fieldset",
       { className: "guess-field" },
@@ -22713,17 +22722,13 @@ class GuessPerson extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Componen
         null,
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           "select",
-          { className: "guess-element" },
+          { className: "guess-element", selected: "default" },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             "option",
-            null,
-            "Option 1"
+            { value: "default" },
+            "Select a character"
           ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            "option",
-            null,
-            "Option 2"
-          )
+          characters
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { className: "guess-element", type: "submit", value: "GO" })
       )
