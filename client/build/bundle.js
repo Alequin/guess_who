@@ -22468,6 +22468,9 @@ module.exports = traverseAllChildren;
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__guess_list__ = __webpack_require__(187);
+
+
 
 
 class GameDetails extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
@@ -22477,54 +22480,73 @@ class GameDetails extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Componen
       "section",
       { className: "game-details-container" },
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", { src: "./images/guess_who_chars.png", alt: "Guess Who Characters" }),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__guess_list__["a" /* default */], null)
+    );
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["a"] = (GameDetails);
+
+/***/ }),
+/* 187 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+
+
+class GuessList extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
+
+  render() {
+    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      "aside",
+      { className: "guess-list" },
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        "aside",
-        { className: "guess-list" },
+        "h2",
+        null,
+        "Guesses 15/15"
+      ),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        "table",
+        { border: "1" },
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          "h2",
+          "tr",
           null,
-          "Guesses 15/15"
-        ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          "table",
-          { border: "1" },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            "tr",
+            "th",
             null,
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              "th",
-              null,
-              "Attribute"
-            ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              "th",
-              null,
-              "Guess"
-            ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              "th",
-              null,
-              "Result"
-            )
+            "Attribute"
           ),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            "tr",
+            "th",
             null,
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              "td",
-              null,
-              "Hair"
-            ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              "td",
-              null,
-              "Red"
-            ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              "td",
-              null,
-              "Nope"
-            )
+            "Guess"
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            "th",
+            null,
+            "Result"
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          "tr",
+          null,
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            "td",
+            null,
+            "Hair"
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            "td",
+            null,
+            "Red"
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            "td",
+            null,
+            "Nope"
           )
         )
       )
@@ -22533,7 +22555,7 @@ class GameDetails extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Componen
 
 }
 
-/* harmony default export */ __webpack_exports__["a"] = (GameDetails);
+/* harmony default export */ __webpack_exports__["a"] = (GuessList);
 
 /***/ })
 /******/ ]);
