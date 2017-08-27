@@ -22634,6 +22634,10 @@ class GuessForms extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component
 
 class GuessAttribute extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
 
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       "fieldset",
@@ -22745,92 +22749,82 @@ class GuessPerson extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Componen
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__attributes__ = __webpack_require__(194);
+
+
 
 const characters = [];
 
 const alex = {
   name: "alex",
-  gender: "male",
-  hair: { has: true, colour: "black" },
-  nose: { size: "small" },
-  mustache: { has: true, colour: "black" },
-  beard: { has: false, colour: "none" },
-  glasses: { has: false },
-  hat: { has: false, colour: "none" }
+  gender: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].gender.male,
+  hair: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].hair.black,
+  nose: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].nose.small,
+  mustache: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].mustache.black,
+  beard: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].beard.black
 };
 characters.push(alex);
 
 const alfred = {
   name: "alfred",
-  gender: "male",
-  hair: { has: true, colour: "ginger" },
-  nose: { size: "small" },
-  mustache: { has: true, colour: "ginger" },
-  beard: { has: false, colour: "none" },
-  glasses: { has: false },
-  hat: { has: false, colour: "none" }
+  gender: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].gender.male,
+  hair: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].hair.ginger,
+  nose: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].nose.small,
+  mustache: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].mustache.ginger
 };
 characters.push(alfred);
 
 const anita = {
   name: "anita",
-  gender: "female",
-  hair: { has: true, colour: "blonde" },
-  nose: { size: "small" },
-  mustache: { has: false, colour: "none" },
-  beard: { has: false, colour: "none" },
-  glasses: { has: false },
-  hat: { has: false, colour: "none" }
+  gender: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].gender.female,
+  hair: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].hair.blonde,
+  nose: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].nose.small
 };
 characters.push(anita);
 
 const anne = {
   name: "anne",
-  gender: "female",
-  hair: { has: true, colour: "black" },
-  nose: { size: "large" },
-  mustache: { has: false, colour: "none" },
-  beard: { has: false, colour: "none" },
-  glasses: { has: false },
-  hat: { has: false, colour: "none" }
+  gender: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].gender.female,
+  hair: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].hair.black,
+  nose: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].nose.large
 };
 characters.push(anne);
 
 const bernard = {
   name: "bernard",
-  gender: "male",
-  hair: { has: true, colour: "brown" },
-  nose: { size: "large" },
-  mustache: { has: false, colour: "none" },
-  beard: { has: false, colour: "none" },
-  glasses: { has: false },
-  hat: { has: true, colour: "grey" }
+  gender: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].gender.male,
+  hair: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].hair.brown,
+  nose: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].nose.large,
+  hat: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].hat.grey
 };
 characters.push(bernard);
 
 const bill = {
   name: "bill",
-  gender: "male",
-  hair: { has: false, colour: "none" },
-  nose: { size: "small" },
-  mustache: { has: false, colour: "none" },
-  beard: { has: true, colour: "ginger" },
-  glasses: { has: false },
-  hat: { has: false, colour: "none" }
+  gender: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].gender.male,
+  nose: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].nose.small,
+  beard: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].beard.ginger
 };
 characters.push(bill);
 
 const charles = {
   name: "charles",
-  gender: "male",
-  hair: { has: true, colour: "blonde" },
-  nose: { size: "small" },
-  mustache: { has: true, colour: "blonde" },
-  beard: { has: false, colour: "none" },
-  glasses: { has: false },
-  hat: { has: false, colour: "none" }
+  gender: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].gender.male,
+  hair: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].hair.blonde,
+  nose: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].node.small,
+  mustache: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].mustache.blonde
 };
 characters.push(charles);
+
+const claire = {
+  name: "claire",
+  gender: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].gender.female,
+  hair: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].hair.ginger,
+  nose: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].node.small,
+  glasses: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].glasses,
+  hat: __WEBPACK_IMPORTED_MODULE_0__attributes__["a" /* default */].hat.yellow
+};
+characters.push(claire);
 
 /* harmony default export */ __webpack_exports__["a"] = (characters);
 
@@ -22844,6 +22838,52 @@ function dice(min, max) {
 }
 
 /* harmony default export */ __webpack_exports__["a"] = (dice);
+
+/***/ }),
+/* 194 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+
+const attributes = {
+
+  gender: {
+    male: "male",
+    female: "female"
+  },
+
+  hair: {
+    ginger: { has: true, colour: "ginger" },
+    black: { has: true, colour: "black" },
+    blonde: { has: true, colour: "blonde" }
+  },
+
+  nose: {
+    small: { size: "small" },
+    large: { size: "large" }
+  },
+
+  mustache: {
+    ginger: { has: true, colour: "ginger" },
+    black: { has: true, colour: "black" },
+    blonde: { has: true, colour: "blonde" }
+  },
+
+  beard: {
+    ginger: { has: true, colour: "ginger" },
+    black: { has: true, colour: "black" },
+    blonde: { has: true, colour: "blonde" }
+  },
+
+  hat: {
+    grey: { has: true, colour: "grey" },
+    yellow: { has: true, colour: "yellow" }
+  },
+
+  glasses: true
+};
+
+/* harmony default export */ __webpack_exports__["a"] = (attributes);
 
 /***/ })
 /******/ ]);

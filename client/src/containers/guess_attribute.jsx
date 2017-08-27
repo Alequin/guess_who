@@ -2,8 +2,13 @@ import React from 'react';
 
 class GuessAttribute extends React.Component{
 
+  constructor(props){
+    super(props);
+    
+  }
+
   render(){
-    return(
+    return (
       <fieldset className="guess-field">
         <legend>Guess Attribute</legend>
         <form>
