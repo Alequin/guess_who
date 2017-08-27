@@ -9782,19 +9782,15 @@ class GuessWho extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
   handleMakeAttributeGuess(guess) {
     const characterAttribute = this.state.selectedCharacter[guess.attribute];
 
-    console.log(characterAttribute);
-    console.log(guess.subAttributeObject);
-
     let guessResult = "Nope";
     if (guess.subAttributeObject === characterAttribute) {
       guessResult = "Yes";
     }
 
     guess.result = guessResult;
-    console.log(guessResult);
-
-    // const newGuesses = this.state.guesses;
-    // newGuesses.push(guess);
+    const newGuesses = this.state.guesses;
+    newGuesses.unshift(guess);
+    this.setState({ guesses: newGuesses });
   }
 
   render() {
@@ -22542,10 +22538,10 @@ class GuessList extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component 
     const maxGuesses = this.props.maxGuesses;
     const guessesLeft = maxGuesses - guessesMade;
 
-    const tableData = this.props.guesses.map(guess => {
+    const tableData = this.props.guesses.map((guess, index) => {
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         "tr",
-        null,
+        { key: index },
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           "td",
           null,
@@ -22554,7 +22550,7 @@ class GuessList extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component 
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           "td",
           null,
-          guess.guess
+          guess.subAttribute
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           "td",
@@ -22835,6 +22831,7 @@ class GuessPerson extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Componen
 
 
 
+// All characters require a glasses property
 const characters = [];
 
 const alex = {

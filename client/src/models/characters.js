@@ -1,6 +1,7 @@
 
 import attributes from "./attributes";
 
+// All characters require a glasses property
 const characters = [];
 
 const alex = {

@@ -8,11 +8,11 @@ class GuessList extends React.Component{
     const maxGuesses = this.props.maxGuesses;
     const guessesLeft =  maxGuesses - guessesMade;
 
-    const tableData = this.props.guesses.map((guess) => {
+    const tableData = this.props.guesses.map((guess, index) => {
       return(
-        <tr>
+        <tr key={index}>
           <td>{guess.attribute}</td>
-          <td>{guess.guess}</td>
+          <td>{guess.subAttribute}</td>
           <td>{guess.result}</td>
         </tr>
       );
