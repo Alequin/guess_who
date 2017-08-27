@@ -22638,6 +22638,36 @@ class GuessAttribute extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Compo
 
   constructor(props) {
     super(props);
+    this.state = {
+      selectedAttribute: "default",
+      subAttributes: [],
+      selectedSubAttribute: "default"
+    };
+    this.handleOnAttributeChange = this.handleOnAttributeChange.bind(this);
+    this.handleOnSubAttributeChange = this.handleOnSubAttributeChange.bind(this);
+  }
+
+  handleOnAttributeChange(event) {
+
+    const selected = event.target.value;
+    const subAttributes = Object.keys(__WEBPACK_IMPORTED_MODULE_1__models_attributes__["a" /* default */][selected]);
+
+    if (subAttributes.length <= 0) {
+      subAttributes.push("Has");
+      subAttributes.push("Does Not Have");
+    }
+
+    this.setState({
+      selectedAttribute: selected,
+      subAttributes: subAttributes,
+      selectedSubAttribute: "default"
+    });
+  }
+
+  handleOnSubAttributeChange(event) {
+    this.setState({
+      selectedSubAttribute: event.target.value
+    });
   }
 
   render() {
@@ -22649,6 +22679,21 @@ class GuessAttribute extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Compo
         attribute
       );
     });
+
+    const subAttributesAsOptions = this.state.subAttributes.map((attribute, index) => {
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        "option",
+        { key: index, value: attribute },
+        attribute
+      );
+    });
+
+    let subAttributesDefaultOption = "Select a sub attribute";
+    if (subAttributesAsOptions.length <= 0) {
+      subAttributesDefaultOption = "";
+    }
+
+    console.log(this.state.selectedSubAttribute);
 
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       "fieldset",
@@ -22663,7 +22708,10 @@ class GuessAttribute extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Compo
         null,
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           "select",
-          { className: "guess-element", selected: "default" },
+          {
+            className: "guess-element",
+            value: this.state.selectedAttribute,
+            onChange: this.handleOnAttributeChange },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             "option",
             { value: "default" },
@@ -22673,17 +22721,16 @@ class GuessAttribute extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Compo
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           "select",
-          { className: "guess-element" },
+          {
+            className: "guess-element",
+            value: this.state.selectedSubAttribute,
+            onChange: this.handleOnSubAttributeChange },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             "option",
-            null,
-            "Option 1"
+            { disabled: true, value: "default" },
+            subAttributesDefaultOption
           ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            "option",
-            null,
-            "Option 2"
-          )
+          subAttributesAsOptions
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { className: "guess-element", type: "submit", value: "GO" })
       )
