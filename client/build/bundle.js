@@ -9772,7 +9772,7 @@ class GuessWho extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
     super(props);
     this.state = {
       selectedCharacter: __WEBPACK_IMPORTED_MODULE_4__models_characters__["a" /* default */][__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5__models_Dice__["a" /* default */])(0, __WEBPACK_IMPORTED_MODULE_4__models_characters__["a" /* default */].length - 1)],
-      guesses: [],
+      guesses: [{ attribute: "hair", guess: "black", result: "Yes" }],
       maxGuesses: 15
     };
   }
@@ -22518,11 +22518,31 @@ class GuessList extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component 
 
   render() {
 
-    console.log(this.props.maxGuesses);
-
     const guessesMade = this.props.guesses.length;
     const maxGuesses = this.props.maxGuesses;
     const guessesLeft = maxGuesses - guessesMade;
+
+    const tableData = this.props.guesses.map(guess => {
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        "tr",
+        null,
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          "td",
+          null,
+          guess.attribute
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          "td",
+          null,
+          guess.guess
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          "td",
+          null,
+          guess.result
+        )
+      );
+    });
 
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       "aside",
@@ -22564,25 +22584,7 @@ class GuessList extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component 
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           "tbody",
           null,
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            "tr",
-            null,
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              "td",
-              null,
-              "Hair"
-            ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              "td",
-              null,
-              "Red"
-            ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              "td",
-              null,
-              "Nope"
-            )
-          )
+          tableData
         )
       )
     );

@@ -12,7 +12,7 @@ class GuessWho extends React.Component{
     super(props)
     this.state = {
       selectedCharacter: characters[dice(0, characters.length-1)],
-      guesses: [],
+      guesses: [{attribute: "hair", guess: "black", result: "Yes"}],
       maxGuesses: 15
     }
   }

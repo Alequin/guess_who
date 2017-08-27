@@ -4,11 +4,19 @@ class GuessList extends React.Component{
 
   render(){
 
-    console.log(this.props.maxGuesses);
-
     const guessesMade = this.props.guesses.length;
     const maxGuesses = this.props.maxGuesses;
     const guessesLeft =  maxGuesses - guessesMade;
+
+    const tableData = this.props.guesses.map((guess) => {
+      return(
+        <tr>
+          <td>{guess.attribute}</td>
+          <td>{guess.guess}</td>
+          <td>{guess.result}</td>
+        </tr>
+      );
+    });
 
     return(
       <aside className="guess-list">
@@ -22,11 +30,7 @@ class GuessList extends React.Component{
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Hair</td>
-              <td>Red</td>
-              <td>Nope</td>
-            </tr>
+            {tableData}
           </tbody>
         </table>
       </aside>
