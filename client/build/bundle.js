@@ -9756,6 +9756,10 @@ module.exports = getIteratorFn;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_title_nav__ = __webpack_require__(85);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_game_details__ = __webpack_require__(186);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_guess_forms__ = __webpack_require__(188);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__models_characters__ = __webpack_require__(192);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__models_Dice__ = __webpack_require__(193);
+
+
 
 
 
@@ -9763,6 +9767,13 @@ module.exports = getIteratorFn;
 
 
 class GuessWho extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      selectedCharacter: __WEBPACK_IMPORTED_MODULE_4__models_characters__["a" /* default */][__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5__models_Dice__["a" /* default */])(0, __WEBPACK_IMPORTED_MODULE_4__models_characters__["a" /* default */].length - 1)]
+    };
+  }
 
   render() {
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -9803,15 +9814,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(83);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__containers_guess_who__ = __webpack_require__(82);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_characters__ = __webpack_require__(192);
-
 
 
 
 
 
 window.onload = function () {
-  console.log("out: ", __WEBPACK_IMPORTED_MODULE_3__models_characters__["a" /* default */]);
   __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__containers_guess_who__["a" /* default */], null), document.getElementById('app'));
 };
 
@@ -22805,6 +22813,17 @@ const charles = {
 characters.push(charles);
 
 /* harmony default export */ __webpack_exports__["a"] = (characters);
+
+/***/ }),
+/* 193 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+function dice(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+/* harmony default export */ __webpack_exports__["a"] = (dice);
 
 /***/ })
 /******/ ]);
