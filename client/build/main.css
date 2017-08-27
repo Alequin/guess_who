@@ -1,12 +1,28 @@
-#app{
+body{
+  margin: 0;
 }
 
 .title-nav{
-  height: 75px;
+  background-color: blue;
+  color: white;
 }
+
 
 .title-nav .container{
   display: flex;
+}
+
+.title-nav .container button{
+  display: block;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 15px;
+  border: none;
+  height: 30px;
+  background-color: inherit;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
 }
 
 .container{
